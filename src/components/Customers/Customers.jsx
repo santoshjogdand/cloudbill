@@ -2,8 +2,10 @@ import React from 'react'
 
 const Customers = () => {
   return (
-    <div>
-      This is customers page
+    <div className='Main bg-blue-100 w-full h-full'>
+      <div className='Title'>
+        Customer Details
+      </div>
     </div>
   )
 }

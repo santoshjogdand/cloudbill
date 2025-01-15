@@ -3,7 +3,7 @@ import React from 'react'
 const Sales = () => {
   return (
     <div className='main h-full m-0 p-0'>
-      <div className='left h-full w-full bg-blue-200 pt-3 pl-3'>
+      <div className='left h-full w-full bg-blue-100 pt-3 pl-3'>
         <div className='customer_details p-2 h-[35vh] w-full'>
           <div className="title text-lg mb-4 flex gap-[58vw]">
             <div>CUSTOMER DETAILS</div>
@@ -47,9 +47,33 @@ const Sales = () => {
             </div>
           </div>
         </div>
-        <div className='product_details p-2'>
-          <div className="title text-lg">PRODUCT DETAILS</div>
-          <div className="product_details_box"></div>
+        <div className='product_details p-2 mt-5'>
+          <div className="title text-lg flex gap-[58vw]">
+            <div>PRODUCT DETAILS</div>
+            <div className='flex gap-2'>
+              <img src="../src/assets/plus.png" className="h-5" alt="plus" />
+              <p className='text-sm'>Add Product</p>
+            </div>
+          </div>
+          <div className="product_details_box mt-5">
+            <div className="flex items-center gap-5 mt-5">
+              <label htmlFor="cname" className="text-sm font-medium">Search Product</label>
+              <input
+                type="text"
+                id="cname"
+                placeholder='Search product by name, organisation or Description'
+                className="p-1 border border-gray-300 rounded w-[60%]"
+              />
+            </div>
+            <div className='columns mt-10'>
+              <ul className='flex justify-around'>
+                <li>Name</li>
+                <li>Rate</li>
+                <li>Quantity</li>
+                <li>Amount</li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
 
