@@ -1,6 +1,33 @@
-import React from 'react'
+import React, { useState } from 'react';
 
 const Sales = () => {
+  // State to manage the form fields
+  const [customerDetails, setCustomerDetails] = useState({
+    name: '',
+    phone: '',
+    address: '',
+    email: '',
+  });
+
+  // Handler to clear all fields
+  const clearCustomerDetails = () => {
+    setCustomerDetails({
+      name: '',
+      phone: '',
+      address: '',
+      email: '',
+    });
+  };
+
+  // Handler to update individual fields
+  const handleInputChange = (e) => {
+    const { id, value } = e.target;
+    setCustomerDetails((prevDetails) => ({
+      ...prevDetails,
+      [id]: value,
+    }));
+  };
+
   return (
     <div className='main h-full m-0 p-0'>
       <div className='left h-full w-full bg-blue-100 pt-3 pl-3'>
@@ -14,37 +41,53 @@ const Sales = () => {
           </div>
           <div className="customer_details_box grid grid-cols-2 gap-10">
             <div className="flex items-center gap-5">
-              <label htmlFor="cname" className="text-sm font-medium">Name</label>
+              <label htmlFor="name" className="text-sm font-medium">Name</label>
               <input
                 type="text"
-                id="cname"
+                id="name"
+                value={customerDetails.name}
+                onChange={handleInputChange}
                 className="p-1 border border-gray-300 rounded w-[80%]"
               />
             </div>
             <div className="flex items-center gap-2">
-              <label htmlFor="cphone" className="text-sm font-medium">Phone</label>
+              <label htmlFor="phone" className="text-sm font-medium">Phone</label>
               <input
                 type="tel"
-                id="cphone"
+                id="phone"
+                value={customerDetails.phone}
+                onChange={handleInputChange}
                 className="p-1 border border-gray-300 rounded w-[80%]"
               />
             </div>
             <div className="flex items-center gap-2">
-              <label htmlFor="caddress" className="text-sm font-medium">Address</label>
+              <label htmlFor="address" className="text-sm font-medium">Address</label>
               <input
                 type="text"
-                id="caddress"
+                id="address"
+                value={customerDetails.address}
+                onChange={handleInputChange}
                 className="p-1 border border-gray-300 rounded w-[80%]"
               />
             </div>
             <div className="flex items-center gap-4">
-              <label htmlFor="cemail" className="text-sm font-medium">Email</label>
+              <label htmlFor="email" className="text-sm font-medium">Email</label>
               <input
                 type="email"
-                id="cemail"
+                id="email"
+                value={customerDetails.email}
+                onChange={handleInputChange}
                 className="p-1 border border-gray-300 rounded w-[80%]"
               />
             </div>
+          </div>
+          <div className='clear_customer flex justify-center mt-5'>
+            <button
+              className='bg-green-500 text-white rounded px-4 py-1 hover:bg-green-600 hover:scale-105 transition transform'
+              onClick={clearCustomerDetails}
+            >
+              Clear
+            </button>
           </div>
         </div>
         <div className='product_details p-2 mt-5'>
@@ -76,11 +119,8 @@ const Sales = () => {
           </div>
         </div>
       </div>
-
-
-
     </div>
-  )
-}
+  );
+};
 
-export default Sales
+export default Sales;
