@@ -36,7 +36,7 @@ const Sales = () => {
             <div>CUSTOMER DETAILS</div>
             <div className='flex gap-2'>
               <img src="../src/assets/plus.png" className="h-5" alt="plus" />
-              <p className='text-sm'>Add Customer</p>
+              <p className='text-sm text-blue-500'>Add Customer</p>
             </div>
           </div>
           <div className="customer_details_box grid grid-cols-2 gap-10">
@@ -83,7 +83,7 @@ const Sales = () => {
           </div>
           <div className='clear_customer flex justify-center mt-5'>
             <button
-              className='bg-green-500 text-white rounded px-4 py-1 hover:bg-green-600 hover:scale-105 transition transform'
+              className='bg-blue-600 text-white rounded px-4 py-1 hover:bg-blue-600 hover:scale-105 transition transform'
               onClick={clearCustomerDetails}
             >
               Clear
@@ -95,7 +95,7 @@ const Sales = () => {
             <div>PRODUCT DETAILS</div>
             <div className='flex gap-2'>
               <img src="../src/assets/plus.png" className="h-5" alt="plus" />
-              <p className='text-sm'>Add Product</p>
+              <p className='text-sm text-blue-500'>Add Product</p>
             </div>
           </div>
           <div className="product_details_box mt-5">

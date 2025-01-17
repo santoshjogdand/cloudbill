@@ -2,8 +2,8 @@ import React from 'react'
 
 const Inventory = () => {
   return (
-    <div>
-      This is Inventory
+    <div className='main bg-blue-100 w-full h-full'>
+      
     </div>
   )
 }
