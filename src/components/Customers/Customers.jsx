@@ -31,7 +31,7 @@ const Customers = () => {
             />
             <div className='add_customer_logo flex gap-2 ml-20 cursor-pointer'>
               <img src="../src/assets/plus.png" className="h-5" alt="plus" />
-              <p className='text-sm text-blue-600 hover:underline'>Add Customer</p>
+              <p className='text-sm text-blue-600'>Add Customer</p>
             </div>
           </div>
 
