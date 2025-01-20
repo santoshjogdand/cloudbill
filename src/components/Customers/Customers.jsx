@@ -39,11 +39,11 @@ const Customers = () => {
           <div className='columns mt-10'>
             <table className="table-auto w-[80%] mx-auto border-collapse border border-gray-300">
               <thead>
-                <tr className="bg-gray-200">
+                <tr className="bg-blue-600 text-white">
                   <th className="border border-gray-400 px-4 py-2">Name</th>
-                  <th className="border border-gray-400 px-4 py-2">Rate</th>
-                  <th className="border border-gray-400 px-4 py-2">Quantity</th>
-                  <th className="border border-gray-400 px-4 py-2">Amount</th>
+                  <th className="border border-gray-400 px-4 py-2">Contact</th>
+                  <th className="border border-gray-400 px-4 py-2">Email</th>
+                  <th className="border border-gray-400 px-4 py-2">Address</th>
                 </tr>
               </thead>
               <tbody>

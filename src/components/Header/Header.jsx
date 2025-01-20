@@ -18,7 +18,7 @@ const Header = () => {
               </li>
               <li className='flex items-center space-x-3 m-3'>
                 <img src="../src/assets/sales.svg" alt="" className='w-4 h-4' />
-                <Link to="/Sales" className='text-white'>Sales</Link>
+                <Link to="/Sales" className='text-white'>Invoice</Link>
               </li>
               <li className='flex items-center space-x-3 m-3'>
                 <img src="../src/assets/customer.svg" alt="" className='w-4 h-4' />
@@ -26,7 +26,7 @@ const Header = () => {
               </li>
               <li className='flex items-center space-x-3 m-3'>
                 <img src="../src/assets/reports.svg" alt="" className='w-4 h-4' />
-                <Link to="/Reports" className='text-white'>Reports</Link>
+                <Link to="/Invoice" className='text-white'>Sales</Link>
               </li>
               <li className='flex items-center space-x-3 m-3'>
                 <img src="../src/assets/payments.svg" alt="" className='w-4 h-4' />

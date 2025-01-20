@@ -1,126 +1,116 @@
-import React, { useState } from 'react';
+import React from 'react'
 
 const Sales = () => {
-  // State to manage the form fields
-  const [customerDetails, setCustomerDetails] = useState({
-    name: '',
-    phone: '',
-    address: '',
-    email: '',
-  });
-
-  // Handler to clear all fields
-  const clearCustomerDetails = () => {
-    setCustomerDetails({
-      name: '',
-      phone: '',
-      address: '',
-      email: '',
-    });
-  };
-
-  // Handler to update individual fields
-  const handleInputChange = (e) => {
-    const { id, value } = e.target;
-    setCustomerDetails((prevDetails) => ({
-      ...prevDetails,
-      [id]: value,
-    }));
-  };
-
   return (
-    <div className='main h-full m-0 p-0'>
-      <div className='left h-full w-full bg-blue-100 pt-3 pl-3'>
-        <div className='customer_details p-2 h-[35vh] w-full'>
-          <div className="title text-lg mb-4 flex gap-[58vw]">
+    <div className='main w-full h-full bg-blue-100 flex'>
+      <div className='left w-[55vw] h-full'>
+        <div className='customer_details mt-10 px-10'>
+          <div className='title flex justify-between'>
             <div>CUSTOMER DETAILS</div>
-            <div className='flex gap-2'>
-              <img src="../src/assets/plus.png" className="h-5" alt="plus" />
-              <p className='text-sm text-blue-500'>Add Customer</p>
-            </div>
-          </div>
-          <div className="customer_details_box grid grid-cols-2 gap-10">
-            <div className="flex items-center gap-5">
-              <label htmlFor="name" className="text-sm font-medium">Name</label>
+            <div className="customer_number relative w-full max-w-xs">
+              <img
+                src="../src/assets/search.svg"
+                alt="search"
+                className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400"
+              />
               <input
                 type="text"
-                id="name"
-                value={customerDetails.name}
-                onChange={handleInputChange}
-                className="p-1 border border-gray-300 rounded w-[80%]"
+                placeholder="Contact Number"
+                className="pl-10 p-2 border border-gray-300 rounded w-full outline-none text-sm text-gray-700 focus:ring-1 focus:ring-blue-400"
               />
             </div>
-            <div className="flex items-center gap-2">
-              <label htmlFor="phone" className="text-sm font-medium">Phone</label>
-              <input
-                type="tel"
-                id="phone"
-                value={customerDetails.phone}
-                onChange={handleInputChange}
-                className="p-1 border border-gray-300 rounded w-[80%]"
-              />
-            </div>
-            <div className="flex items-center gap-2">
-              <label htmlFor="address" className="text-sm font-medium">Address</label>
-              <input
-                type="text"
-                id="address"
-                value={customerDetails.address}
-                onChange={handleInputChange}
-                className="p-1 border border-gray-300 rounded w-[80%]"
-              />
-            </div>
-            <div className="flex items-center gap-4">
-              <label htmlFor="email" className="text-sm font-medium">Email</label>
-              <input
-                type="email"
-                id="email"
-                value={customerDetails.email}
-                onChange={handleInputChange}
-                className="p-1 border border-gray-300 rounded w-[80%]"
-              />
-            </div>
+
           </div>
-          <div className='clear_customer flex justify-center mt-5'>
-            <button
-              className='bg-blue-600 text-white rounded px-4 py-1 hover:bg-blue-600 hover:scale-105 transition transform'
-              onClick={clearCustomerDetails}
-            >
-              Clear
-            </button>
+          <div className='customer_info flex justify-between mt-10'>
+            <div className='customer_info_left h-[20vh] w-[23vw] bg-white rounded-lg'>
+              <div className='c_name_contact flex justify-between mt-2 text-sm px-4'>
+                <div className='cname'>
+                  <div>INVOICE NO</div>
+                  <div>12356</div>
+                </div>
+                <div className='ccontact'>
+                  <div>CONTACT NO</div>
+                  <div>9172198021</div>
+                </div>
+
+              </div>
+              <div className='separating_line border-t border-gray-300 my-2'></div>
+              <div className='c_address pl-4  text-sm'>
+                <div className='c_address_title'>
+                  DATE
+                </div>
+                <div>
+                  12/05/2025
+                </div>
+              </div>
+            </div>
+            <div className='customer_info_right h-[20vh] w-[23vw] bg-white rounded-lg'>
+              <div className='c_name_contact flex justify-around mt-2 text-sm'>
+                <div className='cname'>
+                  <div>CUSTOMER NAME</div>
+                  <div>Rohit Thorbole</div>
+                </div>
+                <div className='ccontact'>
+                  <div>CONTACT NO</div>
+                  <div>9172198021</div>
+                </div>
+                <div>
+                  <div><img src="../src/assets/delete.svg" alt="" /></div>
+                  <div><img src="../src/assets/edit.svg" alt="" /></div>
+                </div>
+              </div>
+              <div className='separating_line border-t border-gray-300 my-2'></div>
+              <div className='c_address pl-4  text-sm'>
+                <div className='c_address_title'>
+                  ADDRESS
+                </div>
+                <div>
+                  Here Address comes
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-        <div className='product_details p-2 mt-5'>
-          <div className="title text-lg flex gap-[58vw]">
-            <div>PRODUCT DETAILS</div>
-            <div className='flex gap-2'>
-              <img src="../src/assets/plus.png" className="h-5" alt="plus" />
-              <p className='text-sm text-blue-500'>Add Product</p>
-            </div>
-          </div>
-          <div className="product_details_box mt-5">
-            <div className="flex items-center gap-5 mt-5">
-              <label htmlFor="cname" className="text-sm font-medium">Search Product</label>
+        <div className='separating_line border-t border-gray-400 my-3'></div>
+        <div className='Product_details'>
+          <div className='title flex justify-between px-10'>
+            <div className='ptitle text-base'>PRODUCT CART</div>
+            <div className="product_search relative w-full max-w-xs">
+              <img
+                src="../src/assets/search.svg"
+                alt="search"
+                className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400"
+              />
               <input
                 type="text"
-                id="cname"
-                placeholder='Search product by name, organisation or Description'
-                className="p-1 border border-gray-300 rounded w-[60%]"
+                placeholder="Search Product"
+                className="pl-10 p-2 border border-gray-300 rounded w-full outline-none text-sm text-gray-700 focus:ring-1 focus:ring-blue-400"
               />
             </div>
-            <div className='columns mt-10'>
-              <ul className='flex justify-around'>
-                <li>Name</li>
-                <li>Rate</li>
-                <li>Quantity</li>
-                <li>Amount</li>
-              </ul>
+            <div>
+              <button className='bg-blue-500 text-white font-medium py-2 px-4 rounded-md text-sm hover:bg-blue-600 focus:outline-none'>
+                Clear Cart
+              </button>
+
+            </div>
+          </div>
+          <div className='separating_line border-t border-gray-400 my-3'></div>
+          <div className='product_list'>
+            <div className="field_name flex justify-between px-10">
+              <div>Sr No</div>
+              <div>Product Name</div>
+              <div>Rate</div>
+              <div>Quantity</div>
+              <div>Tax</div>
+              <div>Total</div>
             </div>
           </div>
         </div>
       </div>
+      <div className='right w-[31vw] h-full bg-gray-50'></div>
     </div>
-  );
-};
+  )
+}
 
-export default Sales;
+export default Sales
+

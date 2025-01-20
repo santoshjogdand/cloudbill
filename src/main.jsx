@@ -6,10 +6,10 @@ import Layout from './Layout.jsx'
 import Home from './components/Home/Home.jsx'
 import Customers from './components/Customers/Customers.jsx'
 import Payments from './components/Payments/Payments.jsx'
-import Reports from './components/Reports/Reports.jsx'
 import Sales from './components/Sales/Sales.jsx'
 import About from './components/About/About.jsx'
 import Inventory from './components/Inventory/Inventory.jsx'
+import Invoice from './components/Invoice/Invoice.jsx'
 
 const router = createBrowserRouter([
   {
@@ -29,8 +29,8 @@ const router = createBrowserRouter([
         element:<Payments />
       },
       {
-        path:"Reports",
-        element:<Reports />
+        path:"Invoice",
+        element:<Invoice />
       },
       {
         path:"Sales",
