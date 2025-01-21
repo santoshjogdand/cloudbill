@@ -40,6 +40,14 @@ const Header = () => {
                 <img src="../src/assets/about.svg" alt="" className='w-4 h-4' />
                 <Link to="/About" className='text-white'>About</Link>
               </li>
+              <li className='flex items-center space-x-3 m-3'>
+                <img src="../src/assets/about.svg" alt="" className='w-4 h-4' />
+                <Link to="/Login" className='text-white'>Login</Link>
+              </li>
+              <li className='flex items-center space-x-3 m-3'>
+                <img src="../src/assets/about.svg" alt="" className='w-4 h-4' />
+                <Link to="/Signup" className='text-white'>Signup</Link>
+              </li>
             </ul>
           </div>
         </div>
