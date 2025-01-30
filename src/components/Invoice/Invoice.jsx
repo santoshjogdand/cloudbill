@@ -107,9 +107,26 @@ const Invoice = () => {
           </div>
         </div>
       </div>
-      <div className='right w-[31vw] h-full bg-gray-50'></div>
+      <div className='right w-[31vw] h-full bg-gray-50'>  
+        <div className='amount mt-10 px-5'>
+          <div className="title">Invoice</div>
+          <div className='flex justify-between mt-5'>
+            <div className="bg-blue-500 text-white text-center rounded-lg shadow-md p-2 w-[12vw]">
+              <div className="text-sm">Collected Amount</div>
+              <div className="text-sm font-bold mt-1">4528.00</div>
+            </div>
+            <div className="bg-blue-500 text-white text-center rounded-lg shadow-md p-2 w-[12vw]">
+              <div className="text-sm">Due Amount</div>
+              <div className="text-sm font-bold mt-1">00</div>
+            </div>
+          </div>
+        </div>
+        <div className='separating_line border-t border-gray-300 my-2'></div>
+        <div className='accepting_payment'></div>
+        <div className='detail_payment'></div>
+      </div>
     </div>
-  ) 
+  )
 }
 
 export default Invoice
