@@ -1,4 +1,6 @@
 import React from 'react';
+import { Link } from 'react-router-dom'
+
 
 const Home = () => {
   return (
@@ -7,32 +9,32 @@ const Home = () => {
         {/* First Row */}
         <div className='grid grid-cols-3 gap-[200px]'>
           <div className='text-center'>
-            <img src="../src/assets/invoice.png" alt="bill" className='w-20' />
-            <label className="block mt-2">Invoice</label>
+            <Link to="/Invoice"><img src="../src/assets/invoice.png" alt="bill" className='w-20' /></Link>
+            <Link to="/Invoice"><label className="block mt-2">Invoice</label></Link>
           </div>
           <div className='text-center'>
-            <img src="../src/assets/rating.png" alt="user" className='w-20' />
-            <label className="block mt-2">Customers</label>
+            <Link to="/Customers"><img src="../src/assets/rating.png" alt="user" className='w-20' /></Link>
+            <Link to="/Customers"><label className="block mt-2">Customers</label></Link>
           </div>
           <div className='text-center'>
-            <img src="../src/assets/profit.png" alt="sales" className='w-20' />
-            <label className="block mt-2">Sales</label>
+            <Link to="/Sales"><img src="../src/assets/profit.png" alt="sales" className='w-20' /></Link>
+            <Link to="/Sales"><label className="block mt-2">Sales</label></Link>
           </div>
         </div>
 
         {/* Second Row */}
         <div className='grid grid-cols-3 gap-x-[200px]'>
           <div className='text-center'>
-            <img src="../src/assets/income.png" alt="payment" className='w-20' />
-            <label className="block mt-2">Payment</label>
+            <Link to="/Payments"><img src="../src/assets/income.png" alt="payment" className='w-20' /></Link>
+            <Link to="/Payments"><label className="block mt-2">Payment</label></Link>
           </div>
           <div className='text-center'>
-            <img src="../src/assets/inventory.png" alt="inventory" className='w-20' />
-            <label className="block mt-2">Inventory</label>
+            <Link to="/Inventory"><img src="../src/assets/inventory.png" alt="inventory" className='w-20' /></Link>
+            <Link to="/Inventory"><label className="block mt-2">Inventory</label></Link>
           </div>
           <div className='text-center'>
-            <img src="../src/assets/about.png" alt="information" className='w-20' />
-            <label className="block mt-2">About</label>
+            <Link to="/About"><img src="../src/assets/about.png" alt="information" className='w-20' /></Link>
+            <Link to="/About"><label className="block mt-2">About</label></Link>
           </div>
         </div>
       </div>
