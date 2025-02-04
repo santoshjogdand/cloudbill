@@ -20,7 +20,7 @@ const Customers = () => {
               />
               <input
                 type="text"
-                placeholder="Customer Name"
+                placeholder="Search Customer"
                 className="pl-10 p-2 border border-gray-300 rounded w-full outline-none text-sm text-gray-700 focus:ring-1 focus:ring-blue-400"
               />
             </div>
@@ -42,13 +42,13 @@ const Customers = () => {
                 </tr>
               </thead>
               <tbody>
-                <tr className="hover:bg-gray-100">
+                <tr className="hover:bg-gray-100 text-center align-middle">
                   <td className="border border-gray-400 px-4 py-2">Ram Sagar Bhise</td>
                   <td className="border border-gray-400 px-4 py-2">9172198021</td>
                   <td className="border border-gray-400 px-4 py-2">rambhise@gmail.com</td>
                   <td className="border border-gray-400 px-4 py-2">Alandi,Pune</td>
                 </tr>
-                <tr className="hover:bg-gray-100">
+                <tr className="hover:bg-gray-100 text-center align-middle">
                   <td className="border border-gray-400 px-4 py-2">Karan Vijay Narote</td>
                   <td className="border border-gray-400 px-4 py-2">9595009932</td>
                   <td className="border border-gray-400 px-4 py-2">karannarote@gmail.com</td>
