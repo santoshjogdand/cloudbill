@@ -38,7 +38,7 @@ const Invoice = () => {
 
               </div>
               <div className='separating_line border-t border-gray-300 my-2'></div>
-              <div className='c_address pl-4  text-sm'>
+              <div className='c_address px-4 text-sm'>
                 <div className='c_address_title'>
                   DATE
                 </div>
@@ -48,22 +48,22 @@ const Invoice = () => {
               </div>
             </div>
             <div className='customer_info_right h-[20vh] w-[23vw] bg-white rounded-lg'>
-              <div className='c_name_contact flex justify-around mt-2 text-sm'>
+              <div className='c_name_contact flex justify-between mt-2 text-sm mx-4'>
                 <div className='cname'>
                   <div>CUSTOMER NAME</div>
                   <div>Rohit Thorbole</div>
                 </div>
-                <div className='ccontact'>
+                {/* <div className='ccontact'>
                   <div>CONTACT NO</div>
                   <div>9172198021</div>
-                </div>
+                </div> */}
                 <div>
                   <div><img src="../src/assets/delete.svg" alt="" /></div>
                   <div><img src="../src/assets/edit.svg" alt="" /></div>
                 </div>
               </div>
               <div className='separating_line border-t border-gray-300 my-2'></div>
-              <div className='c_address pl-4  text-sm'>
+              <div className='c_address px-4 text-sm'>
                 <div className='c_address_title'>
                   ADDRESS
                 </div>
@@ -111,43 +111,8 @@ const Invoice = () => {
         </div>
       </div>
       <div className='right w-[31vw] h-full bg-gray-50'>
-        <div className='amount mt-10 px-5'>
-          <div className="title">Invoice</div>
-          <div className='flex justify-between mt-5'>
-            <div className="bg-blue-500 text-white text-center rounded-lg shadow-md p-2 w-[12vw]">
-              <div className="text-sm">Collected Amount</div>
-              <div className="text-sm font-bold mt-1">1434.00</div>
-            </div>
-            <div className="bg-blue-500 text-white text-center rounded-lg shadow-md p-2 w-[12vw]">
-              <div className="text-sm">Due Amount</div>
-              <div className="text-sm font-bold mt-1">00</div>
-            </div>
-          </div>
-        </div>
-
-        {/* Separating line */}
-        <div className='separating_line border-t border-gray-300 my-2'></div>
-
-        <div className='accepting_payments mt-5'>
-          <div className="payment_mode flex justify-around">
-            <div className='h-10 bg-gray-200 w-auto p-2 px-6'>CASH</div>
-            <div className='h-10 bg-gray-200 w-auto p-2 px-6'>CARD</div>
-            <div className='h-10 bg-gray-200 w-auto p-2 px-6'>UPI</div>
-            <div className='h-10 bg-gray-200 w-auto p-2 px-6'>WALLET</div>
-          </div>
-          <div className='recived_payment flex justify-center mt-5'>
-            <input
-              type="text"
-              placeholder="Received Amount"
-              className="pl-10 p-2 border border-gray-300 rounded outline-none text-sm text-gray-700 focus:ring-1 focus:ring-gray-400 mb-5"
-            />
-          </div>
-        </div>
-
-        {/* Separating line */}
-        <div className='separating_line border-t border-gray-300 my-2'></div>
-
         <div className='detail_payment mt-5 px-5'>
+        <div className="title text-xl my-3">Invoice</div>
           <div className='calculations'>
             <div className='sub_total flex justify-between text-sm'>
               <div>Sub Total</div>
@@ -166,6 +131,26 @@ const Invoice = () => {
               <div>1434</div>
             </div>
           </div>
+        </div>
+
+        {/* Separating line */}
+        <div className='separating_line border-t border-gray-300 my-5'></div>
+
+        <div className='accepting_payments mt-5'>
+          <div className="payment_mode flex justify-around">
+            <div className='h-10 bg-gray-200 w-auto p-2 px-6'>CASH</div>
+            <div className='h-10 bg-gray-200 w-auto p-2 px-6'>CARD</div>
+            <div className='h-10 bg-gray-200 w-auto p-2 px-6'>UPI</div>
+            <div className='h-10 bg-gray-200 w-auto p-2 px-6'>WALLET</div>
+          </div>
+          <div className='recived_payment flex justify-center mt-5'>
+            <input
+              type="text"
+              placeholder="Received Amount"
+              className="pl-10 p-2 border border-gray-300 rounded outline-none text-sm text-gray-700 focus:ring-1 focus:ring-gray-400"
+            />
+          </div>
+
           <div className='buttons flex justify-around mt-10'>
             <button className='bg-blue-500 text-white font-medium w-[8vw] py-2 px-4 text-sm hover:bg-blue-600 focus:outline-none'>
               Save
@@ -173,6 +158,22 @@ const Invoice = () => {
             <button className='bg-blue-500 text-white font-medium py-2 w-[10vw] px-4 text-sm hover:bg-blue-600 focus:outline-none'>
               Gate Payment
             </button>
+          </div>
+        </div>
+
+        {/* Separating line */}
+        <div className='separating_line border-t border-gray-300 my-5'></div>
+
+        <div className='amount mt-10 px-5'>
+          <div className='flex justify-between mt-5'>
+            <div className="bg-blue-500 text-white text-center shadow-md p-2 w-[12vw]">
+              <div className="text-sm">Collected Amount</div>
+              <div className="text-sm font-bold mt-1">1434.00</div>
+            </div>
+            <div className="bg-blue-500 text-white text-center shadow-md p-2 w-[12vw]">
+              <div className="text-sm">Due Amount</div>
+              <div className="text-sm font-bold mt-1">00</div>
+            </div>
           </div>
         </div>
       </div>
