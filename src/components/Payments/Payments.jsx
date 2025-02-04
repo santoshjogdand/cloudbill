@@ -18,7 +18,7 @@ const Payments = () => {
   return (
     <div className='main bg-blue-100 w-full h-full'>
        {/* Title */}
-       <div className='title text-xl flex justify-center py-5'>Payments</div>
+       <div className='title text-xl flex justify-center py-5 font-bold'>Payments</div>
       {/* Filter Section */}
       <div className='filters flex justify-around items-center mb-5'>
         {/* Amount Filter */}
