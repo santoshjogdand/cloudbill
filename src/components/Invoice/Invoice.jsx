@@ -3,18 +3,6 @@ import { useState } from "react";
 
 
 const Invoice = () => {
-  const [selectedOption, setSelectedOption] = useState(null);
-
-  const options = [
-    { id: "cash", label: "CASH", icon: "M12 8c.884 0 1.68.195 2.343.513C13.418 7.805 11.973 7 10 7 6.13 7 4 9.134 4 12c0 1.882.773 3.418 1.905 4.457A7.49 7.49 0 0010 19c1.972 0 3.417-.805 4.343-1.513A5.493 5.493 0 0112 8z", amount: "4528.0" },
-    { id: "card", label: "CARD", icon: "M3 10h18M3 6h18M3 14h18M3 18h18" },
-    { id: "credit-note", label: "CREDIT NOTE", icon: "M8 16l4-4-4-4m4 4h8m-8 4v-8" },
-    { id: "wallet", label: "WALLET", icon: "M3 10h18m-6 4H3" },
-  ];
-
-  const handleOptionClick = (optionId) => {
-    setSelectedOption(optionId);
-  };
 
   return (
     <div className='main w-full h-full bg-blue-100 flex'>
@@ -30,7 +18,7 @@ const Invoice = () => {
               />
               <input
                 type="text"
-                placeholder="Contact Number"
+                placeholder="Customer Name"
                 className="pl-10 p-2 border border-gray-300 rounded w-full outline-none text-sm text-gray-700 focus:ring-1 focus:ring-blue-400"
               />
             </div>
@@ -103,7 +91,7 @@ const Invoice = () => {
               />
             </div>
             <div>
-              <button className='bg-blue-500 text-white font-medium py-2 px-4 rounded-md text-sm hover:bg-blue-600 focus:outline-none'>
+              <button className='bg-blue-500 text-white font-medium py-2 px-4 text-sm hover:bg-blue-600 focus:outline-none'>
                 Clear Cart
               </button>
 
@@ -128,7 +116,7 @@ const Invoice = () => {
           <div className='flex justify-between mt-5'>
             <div className="bg-blue-500 text-white text-center rounded-lg shadow-md p-2 w-[12vw]">
               <div className="text-sm">Collected Amount</div>
-              <div className="text-sm font-bold mt-1">4528.00</div>
+              <div className="text-sm font-bold mt-1">1434.00</div>
             </div>
             <div className="bg-blue-500 text-white text-center rounded-lg shadow-md p-2 w-[12vw]">
               <div className="text-sm">Due Amount</div>
@@ -136,69 +124,56 @@ const Invoice = () => {
             </div>
           </div>
         </div>
+
+        {/* Separating line */}
         <div className='separating_line border-t border-gray-300 my-2'></div>
-        <div className="accepting_payment">
-          <div className="w-full bg-gray-100 rounded-lg shadow-md p-1 flex gap-2 justify-between">
-            {options.map((option) => (
-              <div
-                key={option.id}
-                className={`option ${selectedOption === option.id
-                  ? "bg-blue-100"
-                  : "bg-white hover:bg-gray-200"
-                  } rounded-lg flex items-center p-2 cursor-pointer`}
-                onClick={() => handleOptionClick(option.id)}
-              >
-                <div className="icon text-blue-500 mr-2">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-6 w-6"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d={option.icon}
-                    />
-                  </svg>
-                </div>
-                <div>
-                  <div
-                    className={`text-sm ${selectedOption === option.id ? "text-blue-500" : "text-gray-800"
-                      }`}
-                  >
-                    {option.label}
-                  </div>
-                  {option.amount && (
-                    <div className="text-sm text-gray-500">
-                      {option.amount}
-                    </div>
-                  )}
-                </div>
-              </div>
-            ))}
+
+        <div className='accepting_payments mt-5'>
+          <div className="payment_mode flex justify-around">
+            <div className='h-10 bg-gray-200 w-auto p-2 px-6'>CASH</div>
+            <div className='h-10 bg-gray-200 w-auto p-2 px-6'>CARD</div>
+            <div className='h-10 bg-gray-200 w-auto p-2 px-6'>UPI</div>
+            <div className='h-10 bg-gray-200 w-auto p-2 px-6'>WALLET</div>
           </div>
-          <div className="received-amount mt-4">
-            <label
-              htmlFor="receivedAmount"
-              className="block text-sm font-medium text-gray-700"
-            >
-              Received Amount
-            </label>
+          <div className='recived_payment flex justify-center mt-5'>
             <input
               type="text"
-              id="receivedAmount"
-              className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
-              readOnly
+              placeholder="Received Amount"
+              className="pl-10 p-2 border border-gray-300 rounded outline-none text-sm text-gray-700 focus:ring-1 focus:ring-gray-400 mb-5"
             />
           </div>
         </div>
 
+        {/* Separating line */}
         <div className='separating_line border-t border-gray-300 my-2'></div>
-        <div className='detail_payment'>
 
+        <div className='detail_payment mt-5 px-5'>
+          <div className='calculations'>
+            <div className='sub_total flex justify-between text-sm'>
+              <div>Sub Total</div>
+              <div>1234</div>
+            </div>
+            <div className='Taxes flex justify-between text-sm'>
+              <div>Taxes</div>
+              <div>200</div>
+            </div>
+            <div className='Discounts flex justify-between text-sm'>
+              <div>Discount</div>
+              <div>00</div>
+            </div>
+            <div className='Total flex justify-between text-sm font-bold'>
+              <div>Total</div>
+              <div>1434</div>
+            </div>
+          </div>
+          <div className='buttons flex justify-around mt-10'>
+            <button className='bg-blue-500 text-white font-medium w-[8vw] py-2 px-4 text-sm hover:bg-blue-600 focus:outline-none'>
+              Save
+            </button>
+            <button className='bg-blue-500 text-white font-medium py-2 w-[10vw] px-4 text-sm hover:bg-blue-600 focus:outline-none'>
+              Gate Payment
+            </button>
+          </div>
         </div>
       </div>
     </div>
