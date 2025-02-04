@@ -1,17 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
 const Customers = () => {
-  // Placeholder for customer data
-  const [customers, setCustomers] = useState([]);
 
-  useEffect(() => {
-    // Simulated API call to fetch customers (replace with real API call later)
-    // fetch('/api/customers')
-    //   .then(response => response.json())
-    //   .then(data => setCustomers(data));
-    
-    setCustomers([]); // Start with empty data for now
-  }, []);
 
   return (
     <div className='Main bg-blue-100 w-full h-full'>
@@ -21,15 +11,20 @@ const Customers = () => {
         </div>
         <div className="product_details_box mt-5 ml-10">
           {/* Search Bar */}
-          <div className="flex items-center gap-5 mt-5">
-            <label htmlFor="cname" className="text-sm font-medium">Search Customer</label>
-            <input
-              type="text"
-              id="cname"
-              placeholder='Search Customer by name, id etc...'
-              className="p-1 border border-gray-300 rounded w-[60%]"
-            />
-            <div className='add_customer_logo flex gap-2 ml-20 cursor-pointer'>
+          <div className="searchandadd flex justify-center gap-10 mt-5">
+            <div className="search relative w-full max-w-xs">
+              <img
+                src="../src/assets/search.svg"
+                alt="search"
+                className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400"
+              />
+              <input
+                type="text"
+                placeholder="Customer Name"
+                className="pl-10 p-2 border border-gray-300 rounded w-full outline-none text-sm text-gray-700 focus:ring-1 focus:ring-blue-400"
+              />
+            </div>
+            <div className='add_customer_logo flex gap-2 cursor-pointer mt-2'>
               <img src="../src/assets/plus.png" className="h-5" alt="plus" />
               <p className='text-sm text-blue-600'>Add Customer</p>
             </div>
@@ -47,22 +42,18 @@ const Customers = () => {
                 </tr>
               </thead>
               <tbody>
-                {customers.length === 0 ? (
-                  <tr>
-                    <td colSpan="4" className="text-center py-4 text-gray-500">
-                      No data available
-                    </td>
-                  </tr>
-                ) : (
-                  customers.map((customer, index) => (
-                    <tr key={index} className="hover:bg-gray-100">
-                      <td className="border border-gray-400 px-4 py-2">{customer.name}</td>
-                      <td className="border border-gray-400 px-4 py-2">{customer.rate}</td>
-                      <td className="border border-gray-400 px-4 py-2">{customer.quantity}</td>
-                      <td className="border border-gray-400 px-4 py-2">{customer.amount}</td>
-                    </tr>
-                  ))
-                )}
+                <tr className="hover:bg-gray-100">
+                  <td className="border border-gray-400 px-4 py-2">Ram Sagar Bhise</td>
+                  <td className="border border-gray-400 px-4 py-2">9172198021</td>
+                  <td className="border border-gray-400 px-4 py-2">rambhise@gmail.com</td>
+                  <td className="border border-gray-400 px-4 py-2">Alandi,Pune</td>
+                </tr>
+                <tr className="hover:bg-gray-100">
+                  <td className="border border-gray-400 px-4 py-2">Karan Vijay Narote</td>
+                  <td className="border border-gray-400 px-4 py-2">9595009932</td>
+                  <td className="border border-gray-400 px-4 py-2">karannarote@gmail.com</td>
+                  <td className="border border-gray-400 px-4 py-2">khed,Pune</td>
+                </tr>
               </tbody>
             </table>
           </div>
