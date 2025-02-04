@@ -9,7 +9,7 @@ const Customers = () => {
         <div className='title flex justify-center text-xl font-bold'>
           Customer Details
         </div>
-        <div className="product_details_box mt-5 ml-10">
+        <div className="mt-5 ml-10">
           {/* Search Bar */}
           <div className="searchandadd flex justify-center gap-10 mt-5">
             <div className="search relative w-full max-w-xs">
