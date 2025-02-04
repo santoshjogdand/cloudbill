@@ -24,17 +24,17 @@ const Home = () => {
 
         {/* Second Row */}
         <div className='grid grid-cols-3 gap-x-[200px]'>
-          <div className='text-center'>
+          {/* <div className='text-center'>
             <Link to="/Payments"><img src="../src/assets/income.png" alt="payment" className='w-20' /></Link>
             <Link to="/Payments"><label className="block mt-2">Payment</label></Link>
-          </div>
+          </div> */}
           <div className='text-center'>
             <Link to="/Inventory"><img src="../src/assets/inventory.png" alt="inventory" className='w-20' /></Link>
             <Link to="/Inventory"><label className="block mt-2">Inventory</label></Link>
           </div>
           <div className='text-center'>
             <Link to="/About"><img src="../src/assets/about.png" alt="information" className='w-20' /></Link>
-            <Link to="/About"><label className="block mt-2">About</label></Link>
+            <Link to="/About"><label className="block mt-2">Account</label></Link>
           </div>
         </div>
       </div>

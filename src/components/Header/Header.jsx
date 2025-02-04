@@ -25,17 +25,17 @@ const Header = () => {
                 <Link to="./Customers" className='text-white'>Customers</Link>
               </li>
               <li className='flex items-center space-x-3 m-3'>
-                <img src="../src/assets/reports.svg" alt="" className='w-4 h-4' />
-                <Link to="/Sales" className='text-white'>Sales</Link>
-              </li>
-              <li className='flex items-center space-x-3 m-3'>
-                <img src="../src/assets/payments.svg" alt="" className='w-4 h-4' />
-                <Link to="/Payments" className='text-white'>Payments</Link>
-              </li>
-              <li className='flex items-center space-x-3 m-3'>
                 <img src="../src/assets/payments.svg" alt="" className='w-4 h-4' />
                 <Link to="/Inventory" className='text-white'>Inventory</Link>
               </li>
+              <li className='flex items-center space-x-3 m-3'>
+                <img src="../src/assets/reports.svg" alt="" className='w-4 h-4' />
+                <Link to="/Sales" className='text-white'>Sales</Link>
+              </li>
+              {/* <li className='flex items-center space-x-3 m-3'>
+                <img src="../src/assets/payments.svg" alt="" className='w-4 h-4' />
+                <Link to="/Payments" className='text-white'>Payments</Link>
+              </li> */}
               <li className='flex items-center space-x-3 m-3'>
                 <img src="../src/assets/about.svg" alt="" className='w-4 h-4' />
                 <Link to="/About" className='text-white'>Account</Link>
