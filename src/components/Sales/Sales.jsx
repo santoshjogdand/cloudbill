@@ -19,7 +19,7 @@ const Sales = () => {
     <div className='main bg-blue-100 w-full h-full'>
       {/* Title */}
       <div className='title text-xl flex justify-center py-5 font-bold'>Sales</div>
-      
+
       {/* Filter Section */}
       <div className='filters flex justify-around items-center mb-5'>
         {/* Amount Filter */}
@@ -78,8 +78,37 @@ const Sales = () => {
       </div>
 
       {/* Display Sales */}
-      <div className='sales-list mt-5'>
-        <p className='text-center text-gray-500'>No sales to display</p>
+      <div className="mt-5 ml-10">
+        {/* Table Columns */}
+        <div className='columns mt-10'>
+          <table className="table-auto w-[80%] mx-auto border-collapse border border-gray-300">
+            <thead>
+              <tr className="bg-blue-600 text-white">
+                <th className="border border-gray-400 px-4 py-2">Date</th>
+                <th className="border border-gray-400 px-4 py-2">Customer Name</th>
+                <th className="border border-gray-400 px-4 py-2">Product Name</th>
+                <th className="border border-gray-400 px-4 py-2">Collected Amount</th>
+                <th className="border border-gray-400 px-4 py-2">Due Amount</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr className="hover:bg-gray-100 text-center align-middle">
+                <td className="border border-gray-400 px-4 py-2">10/12/2022</td>
+                <td className="border border-gray-400 px-4 py-2">Seed Oil</td>
+                <td className="border border-gray-400 px-4 py-2">9172198021</td>
+                <td className="border border-gray-400 px-4 py-2">20000</td>
+                <td className="border border-gray-400 px-4 py-2">2600</td>
+              </tr>
+              <tr className="hover:bg-gray-100 text-center align-middle">
+                <td className="border border-gray-400 px-4 py-2">10/12/2022</td>
+                <td className="border border-gray-400 px-4 py-2">Karan Vijay Narote</td>
+                <td className="border border-gray-400 px-4 py-2">Ashirwad Atta</td>
+                <td className="border border-gray-400 px-4 py-2">21233</td>
+                <td className="border border-gray-400 px-4 py-2">00</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
   );
