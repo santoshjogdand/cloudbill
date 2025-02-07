@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 
 const Home = () => {
   return (
-    <div className='w-full h-full bg-blue-100 flex pt-20 justify-center'>
+    <div className='w-full h-full bg-blue-100 flex pt-20 justify-center pl-[30vh]'>
       <div className='logo space-y-10'>
         {/* First Row */}
         <div className='grid grid-cols-3 gap-[200px]'>

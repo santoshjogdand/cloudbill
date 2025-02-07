@@ -4,7 +4,7 @@ const Inventory = () => {
 
 
   return (
-    <div className='Main bg-blue-100 w-full h-full'>
+    <div className='Main bg-blue-100 w-full h-full pl-[30vh]'>
       <div className='inventory_page p-2'>
         <div className='title flex justify-center text-xl font-bold'>
           Inventory
@@ -36,8 +36,8 @@ const Inventory = () => {
               <thead>
                 <tr className="bg-blue-600 text-white">
                   <th className="border border-gray-400 px-4 py-2">Product Name</th>
+                  <th className="border border-gray-400 px-4 py-2">NOS</th>
                   <th className="border border-gray-400 px-4 py-2">Quantity</th>
-                  <th className="border border-gray-400 px-4 py-2">Unit</th>
                   <th className="border border-gray-400 px-4 py-2">Cost Price</th>
                   <th className="border border-gray-400 px-4 py-2">Selling Price</th>
                 </tr>

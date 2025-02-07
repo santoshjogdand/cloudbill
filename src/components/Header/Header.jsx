@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 const Header = () => {
   return (
     <>
-      <div className='main w-[30vh] h-[100vh] bg-blue-950 m-0'>
+      <div className='main w-[30vh] h-[100vh] bg-blue-950 m-0 fixed top-0 left-0'>
         <div className='left'>
           <div className='logo'>
             <img src="" className='' alt="" />
@@ -40,7 +40,6 @@ const Header = () => {
                 <img src="../src/assets/about.svg" alt="" className='w-4 h-4' />
                 <Link to="/About" className='text-white'>Account</Link>
               </li>
-              
             </ul>
           </div>
         </div>

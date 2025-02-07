@@ -4,7 +4,7 @@ const Customers = () => {
 
 
   return (
-    <div className='Main bg-blue-100 w-full h-full'>
+    <div className='Main bg-blue-100 w-full h-full pl-[30vh]'>
       <div className='customer_page p-2'>
         <div className='title flex justify-center text-xl font-bold'>
           Customer Details

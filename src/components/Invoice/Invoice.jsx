@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 
 const Invoice = () => {
 
@@ -14,8 +14,15 @@ const Invoice = () => {
     if (addressRef.current) addressRef.current.value = '';
   };
 
+  const [plates, setPlates] = useState([]); // State to store the list of plates
+
+  // Function to add a new plate
+  const handleAddPlate = () => {
+    setPlates([...plates, {}]); // Add a new empty object to the array
+  };
+
   return (
-    <div className='main w-full h-full bg-blue-100 flex'>
+    <div className='main w-full h-full bg-blue-100 flex pl-[30vh]'>
       <div className='left w-[55vw] h-full'>
         <div className='customer'>
           <div className='title flex justify-between mt-5 px-10'>
@@ -121,7 +128,10 @@ const Invoice = () => {
               />
             </div>
             <div>
-              <button className='bg-blue-500 text-white font-medium py-2 px-6 text-sm hover:bg-blue-600 focus:outline-none'>
+              <button
+                onClick={handleAddPlate} // Call the function on button click
+                className='bg-blue-500 text-white font-medium py-2 px-6 text-sm hover:bg-blue-600 focus:outline-none'
+              >
                 Add
               </button>
             </div>
@@ -129,17 +139,24 @@ const Invoice = () => {
           <div className='separating_line border-t border-gray-400 my-3'></div>
           <div className='product_list'>
             <div className="field_name flex justify-between px-10">
-              <div>Sr No</div>
               <div>Product Name</div>
               <div>Rate</div>
               <div>Quantity</div>
+              <div>NOS</div>
               <div>Tax</div>
               <div>Total</div>
             </div>
           </div>
+          {plates.map((plate, index) => (
+            <div key={index} className='white_plate flex justify-center mt-5'>
+              <div className='w-[52vw] h-[12vh] bg-white flex'>
+                
+              </div>
+            </div>
+          ))}
         </div>
       </div>
-      
+
       <div className='right w-[31vw] h-full bg-gray-50'>
         <div className='detail_payment mt-5 px-5'>
           <div className="title text-xl my-3">Invoice</div>
