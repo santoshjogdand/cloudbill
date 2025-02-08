@@ -22,7 +22,7 @@ const Invoice = () => {
   };
 
   return (
-    <div className='main w-full h-full bg-blue-100 flex pl-[30vh]'>
+    <div className='main w-full h-fit pb-[50vh] bg-blue-100 flex pl-[30vh]'>
       <div className='left w-[55vw] h-full'>
         <div className='customer'>
           <div className='title flex justify-between mt-5 px-10'>
@@ -149,15 +149,20 @@ const Invoice = () => {
           </div>
           {plates.map((plate, index) => (
             <div key={index} className='white_plate flex justify-center mt-5'>
-              <div className='w-[52vw] h-[12vh] bg-white flex'>
-                
+              <div className='w-[52vw] h-[12vh] bg-white flex justify-center items-center gap-3'>
+                <input type="text" placeholder='Product Name'className='w-[12vw] h-7 pl-2 border-none outline-none bg-transparent' />
+                <input type="text" placeholder='Rate' className='w-[7vw] h-7 pl-5 border-none outline-none bg-transparent' />
+                <input type="text" placeholder='Quantity' className='w-[8vw] h-7 pl-5 border-none outline-none bg-transparent' />
+                <input type="text" placeholder='NOS' className='w-[7vw] h-7 pl-10 border-none outline-none bg-transparent' />
+                <input type="text" placeholder='Tax' className='w-[7vw] h-7 pl-10 border-none outline-none bg-transparent' />
+                <input type="text" placeholder='' className='w-[5vw] h-7 pl-5 border-none outline-none bg-transparent' />
               </div>
             </div>
           ))}
         </div>
       </div>
 
-      <div className='right w-[31vw] h-full bg-gray-50'>
+      <div className='right w-[31vw] h-full bg-gray-50 fixed ml-[55vw]'>
         <div className='detail_payment mt-5 px-5'>
           <div className="title text-xl my-3">Invoice</div>
           <div className='calculations'>
