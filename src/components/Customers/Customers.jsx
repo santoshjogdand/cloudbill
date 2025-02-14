@@ -55,7 +55,7 @@ const Customers = () => {
               onClick={() => setShowAddCustomerForm(true)}
             >
               <img src="../src/assets/plus.png" className="h-5" alt="plus" />
-              <p className='text-sm text-blue-600'>Add Product</p>
+              <p className='text-sm text-blue-600'>Add Customer</p>
             </div>
           </div>
 
