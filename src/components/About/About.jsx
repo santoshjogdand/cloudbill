@@ -7,12 +7,12 @@ const About = () => {
 
 
         <div className="w-24 h-24 rounded-full flex justify-center items-center mb-4">
-          <img src="../src/assets/1.png" alt="" />
+          <img src="../src/assets/1.png" alt="logo" className='w-[7vw]' />
         </div>
 
-        <h1 className="text-xl font-semibold text-gray-700 mb-2">CloudBill Manager</h1>
+        <h1 className="text-[2vw] font-semibold text-gray-700 mb-2">CloudBill Manager</h1>
 
-        <div className="text-gray-600 my-3">
+        <div className="text-gray-600 my-[1vw] text-[1.5vw]">
           <p className="mb-1 my-2">Contact: +91 98765 43210</p>
           <p className="mb-1 my-2">Email: support@cloudbill.com</p>
           <p className="mb-1 my-2">Address: 123, Business Park, Pune, Maharashtra</p>
