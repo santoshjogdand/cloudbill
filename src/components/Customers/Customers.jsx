@@ -61,7 +61,7 @@ const Customers = () => {
   return (
     <div className='Main bg-blue-100 w-full h-full pl-[30vh]'>
       <div className='inventory_page p-2'>
-        <div className='title flex justify-center text-xl font-bold'>
+        <div className='title flex justify-center text-[1.5vw] font-bold'>
           Customers
         </div>
         <div className="mt-5 ml-10">
@@ -76,7 +76,7 @@ const Customers = () => {
               <input
                 type="text"
                 placeholder="Search Customer"
-                className="pl-10 p-2 border border-gray-300 rounded w-full outline-none text-sm text-gray-700 focus:ring-1 focus:ring-blue-400"
+                className="pl-10 p-2 border border-gray-300 rounded w-full outline-none text-[2vh] text-gray-700 focus:ring-1 focus:ring-blue-400"
               />
             </div>
             <div
@@ -84,7 +84,7 @@ const Customers = () => {
               onClick={() => setShowAddCustomerForm(true)}
             >
               <img src="../src/assets/plus.png" className="h-5" alt="plus" />
-              <p className='text-sm text-blue-600'>Add Customer</p>
+              <p className='text-[2vh] text-blue-600'>Add Customer</p>
             </div>
           </div>
 
@@ -92,7 +92,7 @@ const Customers = () => {
           <div className='columns mt-10'>
             <table className="table-auto w-[80%] mx-auto border-collapse border border-gray-300">
               <thead>
-                <tr className="bg-blue-600 text-white">
+                <tr className="bg-blue-600 text-white text-[2.5vh]">
                   <th className="border border-gray-400 px-4 py-2">Customer Name</th>
                   <th className="border border-gray-400 px-4 py-2">Email</th>
                   <th className="border border-gray-400 px-4 py-2">Contact</th>
