@@ -27,7 +27,7 @@ const Customers = () => {
       alert("Please fill out the required fields.");
     }
   };
-  
+
 
   return (
     <div className='Main bg-blue-100 w-full h-full pl-[30vh]'>
@@ -68,6 +68,7 @@ const Customers = () => {
                   <th className="border border-gray-400 px-4 py-2">Email</th>
                   <th className="border border-gray-400 px-4 py-2">Contact</th>
                   <th className="border border-gray-400 px-4 py-2">Address</th>
+                  <th className="border border-gray-400 px-4 py-2">Edit</th>
                 </tr>
               </thead>
               <tbody>
@@ -77,6 +78,10 @@ const Customers = () => {
                     <td className="border border-gray-400 px-4 py-2">{customer.email}</td>
                     <td className="border border-gray-400 px-4 py-2">{customer.contact}</td>
                     <td className="border border-gray-400 px-4 py-2">{customer.address}</td>
+                    <td className="border border-gray-400 px-4 py-2 flex justify-around">
+                      <img src="../src/assets/cross.png" alt="" className='h-6'/>
+                      <img src="../src/assets/edit.png" alt="" className='h-5'/>
+                    </td>
                   </tr>
                 ))}
               </tbody>

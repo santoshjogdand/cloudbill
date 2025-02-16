@@ -1,16 +1,17 @@
 import React, { useState } from "react";
 
 const Inventory = () => {
-  const [products, setProducts] = useState([
-    { name: "Seed Oil", nos: 100, quantity: "2lit", costPrice: 250, sellingPrice: 270 },
-    { name: "Ashirwad Atta", nos: 200, quantity: "5kg", costPrice: 120, sellingPrice: 130 },
-  ]);
+  const [products, setProducts] = useState([]);
+
+  const [editingIndex, setEditingIndex] = useState(null);
+
 
   const [showAddProductForm, setShowAddProductForm] = useState(false);
   const [newProduct, setNewProduct] = useState({
     name: "",
     category: "",
     quantity: "",
+    nos: "",
     taxRate: "",
     taxType: "",
     supplier: "",
@@ -26,33 +27,63 @@ const Inventory = () => {
     setNewProduct({ ...newProduct, [name]: value });
   };
 
-  const addProduct = () => {
-    if (newProduct.name && newProduct.quantity && newProduct.costPrice && newProduct.sellingPrice) {
-      setProducts([...products, {
-        name: newProduct.name,
-        nos: newProduct.quantity,
-        quantity: newProduct.quantity,
-        costPrice: newProduct.costPrice,
-        sellingPrice: newProduct.sellingPrice,
-      }]);
-      setNewProduct({
-        name: "",
-        category: "",
-        quantity: "",
-        taxRate: "",
-        taxType: "",
-        supplier: "",
-        batchNumber: "",
-        manufacturer: "",
-        description: "",
-        costPrice: "",
-        sellingPrice: "",
-      });
-      setShowAddProductForm(false);
-    } else {
-      alert("Please fill out the required fields.");
-    }
+  const handleDelete = (id) => {
+    const updatedProducts = products.filter((product) => product.id !== id);
+    setProducts(updatedProducts); // Update state to remove the product
   };
+  
+
+  const handleEditProduct = (product, index) => {
+    setNewProduct({
+      name: product.name,
+      nos: product.nos,
+      quantity: product.quantity, // Keep correct mapping
+      costPrice: product.costPrice,
+      sellingPrice: product.sellingPrice,
+      category: "",
+      taxRate: "",
+      taxType: "",
+      supplier: "",
+      batchNumber: "",
+      manufacturer: "",
+      description: "",
+    });
+    setEditingIndex(index);  // Store the index of the edited product
+    setShowAddProductForm(true);
+  };
+
+
+
+  const addProduct = () => {
+    if (editingIndex !== null) {
+      // Update the existing product
+      const updatedProducts = [...products];
+      updatedProducts[editingIndex] = newProduct;
+      setProducts(updatedProducts);
+      setEditingIndex(null);  // Reset editing mode
+    } else {
+      // Add new product if not editing
+      setProducts([...products, newProduct]);
+    }
+
+    setNewProduct({
+      name: "",
+      quantity: "",
+      nos:"",
+      costPrice: "",
+      sellingPrice: "",
+      category: "",
+      taxRate: "",
+      taxType: "",
+      supplier: "",
+      batchNumber: "",
+      manufacturer: "",
+      description: "",
+    });
+
+    setShowAddProductForm(false); // Hide the form after submission
+  };
+
 
   return (
     <div className='Main bg-blue-100 w-full h-full pl-[30vh]'>
@@ -94,6 +125,7 @@ const Inventory = () => {
                   <th className="border border-gray-400 px-4 py-2">Quantity</th>
                   <th className="border border-gray-400 px-4 py-2">Cost Price</th>
                   <th className="border border-gray-400 px-4 py-2">Selling Price</th>
+                  <th className="border border-gray-400 px-4 py-2">Edit</th>
                 </tr>
               </thead>
               <tbody>
@@ -104,6 +136,20 @@ const Inventory = () => {
                     <td className="border border-gray-400 px-4 py-2">{product.quantity}</td>
                     <td className="border border-gray-400 px-4 py-2">{product.costPrice}</td>
                     <td className="border border-gray-400 px-4 py-2">{product.sellingPrice}</td>
+                    <td className="border border-gray-400 px-4 py-2 flex justify-around">
+                      <img
+                        src="../src/assets/cross.png"
+                        alt=""
+                        className='h-6 cursor-pointer'
+                        onClick={() => handleDelete(product.id)}
+                      />
+                      <img
+                        src="../src/assets/edit.png"
+                        alt="edit"
+                        className='h-5 cursor-pointer'
+                        onClick={() => handleEditProduct(product, index)}
+                      />
+                    </td>
                   </tr>
                 ))}
               </tbody>
@@ -137,6 +183,14 @@ const Inventory = () => {
                     name="quantity"
                     placeholder="Quantity*"
                     value={newProduct.quantity}
+                    onChange={handleInputChange}
+                    className="p-2 border border-gray-300 rounded w-full"
+                  />
+                  <input
+                    type="text"
+                    name="nos"
+                    placeholder="NOS*"
+                    value={newProduct.nos}
                     onChange={handleInputChange}
                     className="p-2 border border-gray-300 rounded w-full"
                   />

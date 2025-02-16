@@ -21,6 +21,10 @@ const Invoice = () => {
     setPlates([...plates, {}]); // Add a new empty object to the array
   };
 
+  const handleRemovePlate = (index) => {
+    setPlates(plates.filter((_, i) => i !== index)); // Remove the plate at the clicked index
+  };
+
   return (
     <div className='main w-full h-fit pb-[50vh] bg-blue-100 flex pl-[30vh]'>
       <div className='left w-[55vw] h-full'>
@@ -148,14 +152,23 @@ const Invoice = () => {
             </div>
           </div>
           {plates.map((plate, index) => (
-            <div key={index} className='white_plate flex justify-center mt-5'>
-              <div className='w-[52vw] h-[12vh] bg-white flex justify-center items-center gap-3'>
-                <input type="text" placeholder='Product Name'className='w-[12vw] h-7 pl-2 border-none outline-none bg-transparent' />
-                <input type="text" placeholder='Rate' className='w-[7vw] h-7 pl-5 border-none outline-none bg-transparent' />
-                <input type="text" placeholder='Quantity' className='w-[8vw] h-7 pl-5 border-none outline-none bg-transparent' />
-                <input type="text" placeholder='NOS' className='w-[7vw] h-7 pl-10 border-none outline-none bg-transparent' />
-                <input type="text" placeholder='Tax' className='w-[7vw] h-7 pl-10 border-none outline-none bg-transparent' />
-                <input type="text" placeholder='' className='w-[5vw] h-7 pl-5 border-none outline-none bg-transparent' />
+            <div key={index} className="white_plate flex justify-center mt-5">
+              <div className="w-[52vw] h-[12vh] bg-white flex items-center gap-3 px-4 relative shadow-md">
+                <div className="flex gap-3 flex-grow">
+                  <input type="text" className="w-[12vw] h-7 pl-2 border-none outline-none bg-transparent" />
+                  <input type="text" className="w-[7vw] h-7 pl-5 border-none outline-none bg-transparent" />
+                  <input type="text" className="w-[8vw] h-7 pl-5 border-none outline-none bg-transparent" />
+                  <input type="text" className="w-[7vw] h-7 pl-10 border-none outline-none bg-transparent" />
+                  <input type="text" className="w-[7vw] h-7 pl-10 border-none outline-none bg-transparent" />
+                  <input type="text" className="w-[5vw] h-7 pl-5 border-none outline-none bg-transparent" />
+                </div>
+                {/* Cross Button to Remove Plate */}
+                <div
+                  className="cross absolute right-1 top-1 cursor-pointer"
+                  onClick={() => handleRemovePlate(index)}
+                >
+                  <img src="../src/assets/cross.png" alt="Close" className="h-5" />
+                </div>
               </div>
             </div>
           ))}
@@ -168,19 +181,19 @@ const Invoice = () => {
           <div className='calculations'>
             <div className='sub_total flex justify-between text-sm'>
               <div>Sub Total</div>
-              <div>1234</div>
+              <div></div>
             </div>
             <div className='Taxes flex justify-between text-sm'>
               <div>Taxes</div>
-              <div>200</div>
+              <div></div>
             </div>
             <div className='Discounts flex justify-between text-sm'>
               <div>Discount</div>
-              <div>00</div>
+              <div></div>
             </div>
             <div className='Total flex justify-between text-sm font-bold'>
               <div>Total</div>
-              <div>1434</div>
+              <div></div>
             </div>
           </div>
         </div>
@@ -218,11 +231,11 @@ const Invoice = () => {
           <div className='flex justify-between mt-5'>
             <div className="bg-blue-500 text-white text-center shadow-md p-2 w-[12vw]">
               <div className="text-sm">Collected Amount</div>
-              <div className="text-sm font-bold mt-1">1434.00</div>
+              <div className="text-sm font-bold mt-1"></div>
             </div>
             <div className="bg-blue-500 text-white text-center shadow-md p-2 w-[12vw]">
               <div className="text-sm">Due Amount</div>
-              <div className="text-sm font-bold mt-1">00</div>
+              <div className="text-sm font-bold mt-1"></div>
             </div>
           </div>
         </div>
