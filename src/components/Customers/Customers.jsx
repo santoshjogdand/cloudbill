@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 
 const Customers = () => {
-  const [customers, setCustomers] = useState([
-    { name: "Rohit Thorbole", email: "rohitthorbole@gmail.com", contact: "9172198021", address: "Alandi" },
-  ]);
+  const [customers, setCustomers] = useState([]);
 
+  const [editingIndex, setEditingIndex] = useState(null);
+  
   const [showAddCustomerForm, setShowAddCustomerForm] = useState(false);
+
   const [newCustomer, setNewCustomer] = useState({
     name: "",
     email: "",
@@ -18,14 +19,52 @@ const Customers = () => {
     setNewCustomer({ ...newCustomer, [name]: value });
   };
 
+  const handleDelete = (id) => {
+    const updatedCustomers = customers.filter((customer) => customer.id !== id);
+    setCustomers(updatedCustomers); // Update state to remove the customer
+  };
+
+  const handleEditProduct = (customer, index) => {
+    setNewCustomer({
+      name: customer.name,
+      email: customer.email,
+      contact: customer.contact, // Keep correct mapping
+      address: customer.address,
+    });
+    setEditingIndex(index);  // Store the index of the edited product
+    setShowAddCustomerForm(true);
+  };
+
+  // const addCustomer = () => {
+  //   if (newCustomer.name && newCustomer.email && newCustomer.contact && newCustomer.address) {
+  //     setCustomers([...customers, newCustomer]);  // ✅ Add new customer correctly
+  //     setNewCustomer({ name: "", email: "", contact: "", address: "" }); // ✅ Reset the input fields
+  //     setShowAddCustomerForm(false);
+  //   } else {
+  //     alert("Please fill out the required fields.");
+  //   }
+  // };
+
   const addCustomer = () => {
-    if (newCustomer.name && newCustomer.email && newCustomer.contact && newCustomer.address) {
-      setCustomers([...customers, newCustomer]);  // ✅ Add new customer correctly
-      setNewCustomer({ name: "", email: "", contact: "", address: "" }); // ✅ Reset the input fields
-      setShowAddCustomerForm(false);
+    if (editingIndex !== null) {
+      // Update the existing product
+      const updatedCustomers = [...customers];
+      updatedCustomers[editingIndex] = newCustomer;
+      setCustomers(updatedCustomers);
+      setEditingIndex(null);  // Reset editing mode
     } else {
-      alert("Please fill out the required fields.");
+      // Add new product if not editing
+      setCustomers([...customers, newCustomer]);
     }
+
+    setNewCustomer({
+      name: "",
+      email: "",
+      contact:"",
+      address: "",
+    });
+
+    setShowAddCustomerForm(false); // Hide the form after submission
   };
 
 
@@ -79,8 +118,19 @@ const Customers = () => {
                     <td className="border border-gray-400 px-4 py-2">{customer.contact}</td>
                     <td className="border border-gray-400 px-4 py-2">{customer.address}</td>
                     <td className="border border-gray-400 px-4 py-2 flex justify-around">
-                      <img src="../src/assets/cross.png" alt="" className='h-6'/>
-                      <img src="../src/assets/edit.png" alt="" className='h-5'/>
+                      <img
+                        src="../src/assets/cross.png"
+                        alt="Delete"
+                        className='h-6 cursor-pointer'
+                        onClick={() => handleDelete(customer.id)}
+                      />
+
+                      <img
+                        src="../src/assets/edit.png"
+                        alt="Edit"
+                        className='h-5 cursor-pointer'
+                        onClick={() => handleEditProduct(customer, index)}
+                      />
                     </td>
                   </tr>
                 ))}
