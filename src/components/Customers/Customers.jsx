@@ -35,16 +35,6 @@ const Customers = () => {
     setShowAddCustomerForm(true);
   };
 
-  // const addCustomer = () => {
-  //   if (newCustomer.name && newCustomer.email && newCustomer.contact && newCustomer.address) {
-  //     setCustomers([...customers, newCustomer]);  // ✅ Add new customer correctly
-  //     setNewCustomer({ name: "", email: "", contact: "", address: "" }); // ✅ Reset the input fields
-  //     setShowAddCustomerForm(false);
-  //   } else {
-  //     alert("Please fill out the required fields.");
-  //   }
-  // };
-
   const addCustomer = () => {
     if (editingIndex !== null) {
       // Update the existing product
