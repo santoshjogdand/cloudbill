@@ -4,7 +4,7 @@ const Customers = () => {
   const [customers, setCustomers] = useState([]);
 
   const [editingIndex, setEditingIndex] = useState(null);
-  
+
   const [showAddCustomerForm, setShowAddCustomerForm] = useState(false);
 
   const [newCustomer, setNewCustomer] = useState({
@@ -20,9 +20,9 @@ const Customers = () => {
   };
 
   const handleDelete = (id) => {
-    const updatedCustomers = customers.filter((customer) => customer.id !== id);
-    setCustomers(updatedCustomers); // Update state to remove the customer
+    setCustomers(customers.filter((customer) => customer.id !== id));
   };
+
 
   const handleEditProduct = (customer, index) => {
     setNewCustomer({
@@ -37,25 +37,20 @@ const Customers = () => {
 
   const addCustomer = () => {
     if (editingIndex !== null) {
-      // Update the existing product
+      // Update the existing customer
       const updatedCustomers = [...customers];
-      updatedCustomers[editingIndex] = newCustomer;
+      updatedCustomers[editingIndex] = { ...newCustomer, id: customers[editingIndex].id };
       setCustomers(updatedCustomers);
-      setEditingIndex(null);  // Reset editing mode
+      setEditingIndex(null);
     } else {
-      // Add new product if not editing
-      setCustomers([...customers, newCustomer]);
+      // Add a new customer with a unique ID
+      setCustomers([...customers, { ...newCustomer, id: Date.now() }]);
     }
 
-    setNewCustomer({
-      name: "",
-      email: "",
-      contact:"",
-      address: "",
-    });
-
-    setShowAddCustomerForm(false); // Hide the form after submission
+    setNewCustomer({ name: "", email: "", contact: "", address: "" });
+    setShowAddCustomerForm(false);
   };
+
 
 
   return (
@@ -111,8 +106,8 @@ const Customers = () => {
                       <img
                         src="../src/assets/cross.png"
                         alt="Delete"
-                        className='h-6 cursor-pointer'
-                        onClick={() => handleDelete(customer.id)}
+                        className="h-6 cursor-pointer"
+                        onClick={() => handleDelete(customer.id)} // Now it passes the correct ID
                       />
 
                       <img

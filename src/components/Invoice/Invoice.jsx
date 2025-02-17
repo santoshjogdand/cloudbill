@@ -40,12 +40,12 @@ const Invoice = () => {
               <input
                 type="text"
                 placeholder="Customer Name"
-                className="pl-10 p-2 border border-gray-300 rounded w-full outline-none text-sm text-gray-700 focus:ring-1 focus:ring-blue-400"
+                className="pl-10 p-2 border border-gray-300 w-full outline-none text-sm text-gray-700 focus:ring-1 focus:ring-blue-400"
               />
             </div>
           </div>
           <div className='customer_info flex justify-between mt-10 px-10'>
-            <div className='customer_info_left h-[20vh] w-[23vw] bg-white rounded-lg'>
+            <div className='customer_info_left h-fit pb-2 w-[23vw] bg-white'>
               <div className='c_name_contact flex justify-between mt-2 text-sm px-4'>
                 <div className='cname'>
                   <div>INVOICE NO</div>
@@ -74,7 +74,7 @@ const Invoice = () => {
               </div>
             </div>
 
-            <div className='customer_info_right h-[20vh] w-[23vw] bg-white rounded-lg'>
+            <div className='customer_info_right h-fit pb-2 w-[23vw] bg-white'>
               <div className='c_name_contact flex justify-between mt-2 text-sm mx-4'>
                 <div className='cname'>
                   <div>CUSTOMER NAME</div>
@@ -128,7 +128,7 @@ const Invoice = () => {
               <input
                 type="text"
                 placeholder="Search Product"
-                className="pl-10 p-2 border border-gray-300 rounded w-full outline-none text-sm text-gray-700 focus:ring-1 focus:ring-blue-400"
+                className="pl-10 p-2 border border-gray-300 w-full outline-none text-sm text-gray-700 focus:ring-1 focus:ring-blue-400"
               />
             </div>
             <div>
@@ -152,8 +152,8 @@ const Invoice = () => {
             </div>
           </div>
           {plates.map((plate, index) => (
-            <div key={index} className="white_plate flex justify-center mt-5">
-              <div className="w-[52vw] h-[12vh] bg-white flex items-center gap-3 px-4 relative shadow-md">
+            <div key={index} className="white_plate flex justify-center mt-2">
+              <div className="w-[52vw] h-[8vh] bg-white flex items-center gap-3 px-4 relative shadow-md">
                 <div className="flex gap-3 flex-grow">
                   <input type="text" className="w-[12vw] h-7 pl-2 border-none outline-none bg-transparent" />
                   <input type="text" className="w-[7vw] h-7 pl-5 border-none outline-none bg-transparent" />
@@ -211,18 +211,18 @@ const Invoice = () => {
             <input
               type="text"
               placeholder="Received Amount"
-              className="pl-10 p-2 border border-gray-300 rounded outline-none text-sm text-gray-700 focus:ring-1 focus:ring-gray-400"
+              className="pl-10 p-2 border border-gray-300 outline-none text-sm text-gray-700 focus:ring-1 focus:ring-gray-400"
             />
           </div>
 
-          <div className='buttons flex justify-around mt-10'>
+          {/* <div className='buttons flex justify-around mt-10'>
             <button className='bg-blue-500 text-white font-medium w-[8vw] py-2 px-4 text-sm hover:bg-blue-600 focus:outline-none'>
               Save
             </button>
             <button className='bg-blue-500 text-white font-medium py-2 w-[10vw] px-4 text-sm hover:bg-blue-600 focus:outline-none'>
               Gate Payment
             </button>
-          </div>
+          </div> */}
         </div>
 
         <div className='separating_line border-t border-gray-300 my-5'></div>
