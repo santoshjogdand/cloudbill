@@ -168,7 +168,7 @@ const Inventory = () => {
                     placeholder="Product Name*"
                     value={newProduct.name}
                     onChange={handleInputChange}
-                    className="p-2 border border-gray-300 rounded w-full"
+                    className="p-2 border border-gray-300 outline-none text-sm text-gray-700 focus:ring-1 focus:ring-gray-400"
                   />
                   <input
                     type="text"
@@ -176,7 +176,7 @@ const Inventory = () => {
                     placeholder="Category"
                     value={newProduct.category}
                     onChange={handleInputChange}
-                    className="p-2 border border-gray-300 rounded w-full"
+                    className="p-2 border border-gray-300 outline-none text-sm text-gray-700 focus:ring-1 focus:ring-gray-400"
                   />
                   <input
                     type="text"
@@ -184,7 +184,7 @@ const Inventory = () => {
                     placeholder="Quantity*"
                     value={newProduct.quantity}
                     onChange={handleInputChange}
-                    className="p-2 border border-gray-300 rounded w-full"
+                    className="p-2 border border-gray-300 outline-none text-sm text-gray-700 focus:ring-1 focus:ring-gray-400"
                   />
                   <input
                     type="text"
@@ -192,7 +192,7 @@ const Inventory = () => {
                     placeholder="NOS*"
                     value={newProduct.nos}
                     onChange={handleInputChange}
-                    className="p-2 border border-gray-300 rounded w-full"
+                    className="p-2 border border-gray-300 outline-none text-sm text-gray-700 focus:ring-1 focus:ring-gray-400"
                   />
                   <input
                     type="text"
@@ -200,7 +200,7 @@ const Inventory = () => {
                     placeholder="Tax Rate"
                     value={newProduct.taxRate}
                     onChange={handleInputChange}
-                    className="p-2 border border-gray-300 rounded w-full"
+                    className="p-2 border border-gray-300 outline-none text-sm text-gray-700 focus:ring-1 focus:ring-gray-400"
                   />
                   <input
                     type="text"
@@ -208,7 +208,7 @@ const Inventory = () => {
                     placeholder="Tax Type"
                     value={newProduct.taxType}
                     onChange={handleInputChange}
-                    className="p-2 border border-gray-300 rounded w-full"
+                    className="p-2 border border-gray-300 outline-none text-sm text-gray-700 focus:ring-1 focus:ring-gray-400"
                   />
                   <input
                     type="text"
@@ -216,7 +216,7 @@ const Inventory = () => {
                     placeholder="Supplier"
                     value={newProduct.supplier}
                     onChange={handleInputChange}
-                    className="p-2 border border-gray-300 rounded w-full"
+                    className="p-2 border border-gray-300 outline-none text-sm text-gray-700 focus:ring-1 focus:ring-gray-400"
                   />
                   <input
                     type="text"
@@ -224,7 +224,7 @@ const Inventory = () => {
                     placeholder="Batch Number"
                     value={newProduct.batchNumber}
                     onChange={handleInputChange}
-                    className="p-2 border border-gray-300 rounded w-full"
+                    className="p-2 border border-gray-300 outline-none text-sm text-gray-700 focus:ring-1 focus:ring-gray-400"
                   />
                   <input
                     type="text"
@@ -232,14 +232,14 @@ const Inventory = () => {
                     placeholder="Manufacturer"
                     value={newProduct.manufacturer}
                     onChange={handleInputChange}
-                    className="p-2 border border-gray-300 rounded w-full"
+                    className="p-2 border border-gray-300 outline-none text-sm text-gray-700 focus:ring-1 focus:ring-gray-400"
                   />
                   <textarea
                     name="description"
                     placeholder="Description"
                     value={newProduct.description}
                     onChange={handleInputChange}
-                    className="p-2 border border-gray-300 rounded w-full"
+                    className="p-2 border border-gray-300 outline-none text-sm text-gray-700 focus:ring-1 focus:ring-gray-400"
                   />
                   <input
                     type="number"
@@ -247,7 +247,7 @@ const Inventory = () => {
                     placeholder="Cost Price*"
                     value={newProduct.costPrice}
                     onChange={handleInputChange}
-                    className="p-2 border border-gray-300 rounded w-full"
+                    className="p-2 border border-gray-300 outline-none text-sm text-gray-700 focus:ring-1 focus:ring-gray-400"
                   />
                   <input
                     type="number"
@@ -255,7 +255,7 @@ const Inventory = () => {
                     placeholder="Selling Price*"
                     value={newProduct.sellingPrice}
                     onChange={handleInputChange}
-                    className="p-2 border border-gray-300 rounded w-full"
+                    className="p-2 border border-gray-300 outline-none text-sm text-gray-700 focus:ring-1 focus:ring-gray-400"
                   />
                 </div>
                 <div className="flex justify-end gap-4 mt-4">

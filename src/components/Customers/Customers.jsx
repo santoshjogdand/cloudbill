@@ -135,7 +135,7 @@ const Customers = () => {
                     placeholder="Customer Name*"
                     value={newCustomer.name}
                     onChange={handleInputChange}
-                    className="p-2 border border-gray-300 rounded w-full"
+                    className="p-2 border border-gray-300 outline-none text-sm text-gray-700 focus:ring-1 focus:ring-gray-400"
                   />
                   <input
                     type="text"
@@ -143,7 +143,7 @@ const Customers = () => {
                     placeholder="Email"
                     value={newCustomer.email}
                     onChange={handleInputChange}
-                    className="p-2 border border-gray-300 rounded w-full"
+                    className="p-2 border border-gray-300 outline-none text-sm text-gray-700 focus:ring-1 focus:ring-gray-400"
                   />
                   <input
                     type="number"
@@ -151,7 +151,7 @@ const Customers = () => {
                     placeholder="Contact*"
                     value={newCustomer.contact}
                     onChange={handleInputChange}
-                    className="p-2 border border-gray-300 rounded w-full"
+                    className="p-2 border border-gray-300 outline-none text-sm text-gray-700 focus:ring-1 focus:ring-gray-400"
                   />
                   <input
                     type="text"
@@ -159,7 +159,7 @@ const Customers = () => {
                     placeholder="Address"
                     value={newCustomer.address}
                     onChange={handleInputChange}
-                    className="p-2 border border-gray-300 rounded w-full"
+                    className="p-2 border border-gray-300 outline-none text-sm text-gray-700 focus:ring-1 focus:ring-gray-400"
                   />
                 </div>
                 <div className="flex justify-end gap-4 mt-4">
