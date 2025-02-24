@@ -1,57 +1,84 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
+import axios from 'axios';
 
 const Customers = () => {
   const [customers, setCustomers] = useState([]);
-
   const [editingIndex, setEditingIndex] = useState(null);
-
   const [showAddCustomerForm, setShowAddCustomerForm] = useState(false);
-
   const [newCustomer, setNewCustomer] = useState({
     name: "",
     email: "",
-    contact: "",
+    phone: "", 
     address: "",
   });
 
+  //API URL
+  const API_URL = "http://localhost:5000/api/v1/organization";
+
+  // Fetch Customers from API
+  useEffect(() => {
+    axios.get(`${API_URL}/getCustomers`)
+      .then(response => {
+        setCustomers(response.data);
+      })
+      .catch(error => console.error("Error fetching customers:", error));
+  }, []);
+
+  // Handle input changes
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setNewCustomer({ ...newCustomer, [name]: value });
   };
 
+  // Delete Customer
   const handleDelete = (id) => {
-    setCustomers(customers.filter((customer) => customer.id !== id));
+    axios.delete(`${API_URL}/deleteCustomer/${id}`)
+      .then(() => {
+        setCustomers(customers.filter(customer => customer._id !== id));
+      })
+      .catch(error => console.error("Error deleting customer:", error));
   };
 
-
-  const handleEditProduct = (customer, index) => {
+  // Handel edit customer
+  const handleEditCustomer = (customer, index) => {
     setNewCustomer({
       name: customer.name,
       email: customer.email,
-      contact: customer.contact, // Keep correct mapping
+      phone: customer.phone, 
       address: customer.address,
     });
-    setEditingIndex(index);  // Store the index of the edited product
+    setEditingIndex(index);
     setShowAddCustomerForm(true);
   };
 
-  const addCustomer = () => {
+  // Add or Update Customer
+  const addOrUpdateCustomer = () => {
     if (editingIndex !== null) {
-      // Update the existing customer
-      const updatedCustomers = [...customers];
-      updatedCustomers[editingIndex] = { ...newCustomer, id: customers[editingIndex].id };
-      setCustomers(updatedCustomers);
-      setEditingIndex(null);
+      // Update Customer
+      const updatedCustomer = { ...newCustomer, id: customers[editingIndex]._id };
+      axios.put(`${API_URL}/updateCustomer/${updatedCustomer.id}`, updatedCustomer)
+        .then(() => {
+          const updatedCustomers = [...customers];
+          updatedCustomers[editingIndex] = updatedCustomer;
+          setCustomers(updatedCustomers);
+          setEditingIndex(null);
+          setShowAddCustomerForm(false);
+        })
+        .catch(error => console.error("Error updating customer:", error));
     } else {
-      // Add a new customer with a unique ID
-      setCustomers([...customers, { ...newCustomer, id: Date.now() }]);
+      // Create Customer
+      axios.post(`${API_URL}/createCustomer`, newCustomer)
+        .then(response => {
+          setCustomers([...customers, response.data]);
+          console.log("Customer added successfully"); //Log success message
+          setShowAddCustomerForm(false);
+        })
+        .catch(error => console.error("Error adding customer:", error));
     }
 
-    setNewCustomer({ name: "", email: "", contact: "", address: "" });
-    setShowAddCustomerForm(false);
+    setNewCustomer({ name: "", email: "", phone: "", address: "" });
   };
-
-
+  
 
   return (
     <div className='Main bg-blue-100 w-full h-full pl-[30vh]'>
@@ -100,7 +127,7 @@ const Customers = () => {
                   <tr key={index} className="hover:bg-gray-100 text-center align-middle">
                     <td className="border border-gray-400 px-4 py-2">{customer.name}</td>
                     <td className="border border-gray-400 px-4 py-2">{customer.email}</td>
-                    <td className="border border-gray-400 px-4 py-2">{customer.contact}</td>
+                    <td className="border border-gray-400 px-4 py-2">{customer.phone}</td>
                     <td className="border border-gray-400 px-4 py-2">{customer.address}</td>
                     <td className="border border-gray-400 px-4 py-2 flex justify-around">
                       <img
@@ -114,7 +141,7 @@ const Customers = () => {
                         src="../src/assets/edit.png"
                         alt="Edit"
                         className='h-5 cursor-pointer'
-                        onClick={() => handleEditProduct(customer, index)}
+                        onClick={() => handleEditCustomer(customer, index)}
                       />
                     </td>
                   </tr>
@@ -147,9 +174,9 @@ const Customers = () => {
                   />
                   <input
                     type="number"
-                    name="contact"
-                    placeholder="Contact*"
-                    value={newCustomer.contact}
+                    name="phone"
+                    placeholder="Phone*"
+                    value={newCustomer.phone}
                     onChange={handleInputChange}
                     className="p-2 border border-gray-300 outline-none text-sm text-gray-700 focus:ring-1 focus:ring-gray-400"
                   />
@@ -170,7 +197,7 @@ const Customers = () => {
                     Cancel
                   </button>
                   <button
-                    onClick={addCustomer}
+                    onClick={addOrUpdateCustomer}
                     className="px-4 py-2 bg-blue-600 text-white rounded"
                   >
                     Add Customer
