@@ -10,6 +10,8 @@ import Sales from './components/Sales/Sales.jsx'
 import About from './components/About/About.jsx'
 import Inventory from './components/Inventory/Inventory.jsx'
 import Invoice from './components/Invoice/Invoice.jsx'
+import Signup from './components/Signup/Signup.jsx'
+import Login from "./components/Login/Login.jsx"
 
 
 const router = createBrowserRouter([
@@ -45,6 +47,14 @@ const router = createBrowserRouter([
         path:"/about",
         element:<About />
       },
+      {
+        path:"/login",
+        element:<Login/>
+      },
+      {
+        path:"/signup",
+        element:<Signup/>
+      }
     ]
   }
 ])
