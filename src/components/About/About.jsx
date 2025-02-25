@@ -5,10 +5,8 @@ const About = () => {
   return (
     <div>
       <Header/>
-      <div className='main bg-blue-100 w-full h-full pl-[30vh] flex justify-center items-center'>
+      <div className='main bg-blue-100 w-full h-screen pl-[30vh] flex justify-center items-center'>
       <div className="main_box w-[30vw] h-[75vh] bg-gray-50 rounded-lg shadow-lg flex flex-col items-center p-6">
-
-
         <div className="w-24 h-24 rounded-full flex justify-center items-center mb-4">
           <img src="../src/assets/1.png" alt="logo" className='w-[7vw]' />
         </div>
