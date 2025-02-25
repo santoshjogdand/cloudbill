@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import Header from '../Header/Header';
 const Sales = () => {
   const [filters, setFilters] = useState({
     amount: '',
@@ -16,7 +16,9 @@ const Sales = () => {
   };
 
   return (
-    <div className='main bg-blue-100 w-full h-fit pl-[30vh] pb-[100vh]'>
+    <div>
+      <Header/>
+      <div className='main bg-blue-100 w-full h-fit pl-[30vh] pb-[100vh]'>
       {/* Title */}
       <div className='title text-[1.5vw] flex justify-center py-5 font-bold'>Sales</div>
 
@@ -107,6 +109,7 @@ const Sales = () => {
           </table>
         </div>
       </div>
+    </div>
     </div>
   );
 };

@@ -15,48 +15,15 @@ import Login from "./components/Login/Login.jsx"
 
 
 const router = createBrowserRouter([
-  {
-    path: '/',
-    element:<Layout />,
-    children: [
-      {
-        path:"",
-        element:<Home />
-      },
-      {
-        path:"/customers",
-        element:<Customers />
-      },
-      {
-        path:"/payments",
-        element:<Payments />
-      },
-      {
-        path:"/invoice",
-        element:<Invoice />
-      },
-      {
-        path:"/sales",
-        element:<Sales />
-      },
-      {
-        path:"/inventory",
-        element:<Inventory />
-      },
-      {
-        path:"/about",
-        element:<About />
-      },
-      {
-        path:"/login",
-        element:<Login/>
-      },
-      {
-        path:"/signup",
-        element:<Signup/>
-      }
-    ]
-  }
+  { path: "/", element: <Home /> },
+  { path: "/customers", element: <Customers /> },
+  { path: "/payments", element: <Payments /> },
+  { path: "/invoice", element: <Invoice /> },
+  { path: "/sales", element: <Sales /> },
+  { path: "/inventory", element: <Inventory /> },
+  { path: "/about", element: <About /> },
+  { path: "/login", element: <Login /> },
+  { path: "/signup", element: <Signup /> }
 ])
 
 createRoot(document.getElementById('root')).render(

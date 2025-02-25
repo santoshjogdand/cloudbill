@@ -22,7 +22,7 @@ const Header = () => {
               </li>
               <li className='flex items-center space-x-3 m-3'>
                 <img src="../src/assets/customer.svg" alt="" className='w-[1.5vw]' />
-                <Link to="./Customers" className='text-white text-[3vh]'>Customers</Link>
+                <Link to="/Customers" className='text-white text-[3vh]'>Customers</Link>
               </li>
               <li className='flex items-center space-x-3 m-3'>
                 <img src="../src/assets/payments.svg" alt="" className='w-[1.5vw]' />

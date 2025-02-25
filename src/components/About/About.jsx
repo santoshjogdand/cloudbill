@@ -1,8 +1,11 @@
 import React from 'react';
+import Header from '../Header/Header';
 
 const About = () => {
   return (
-    <div className='main bg-blue-100 w-full h-full pl-[30vh] flex justify-center items-center'>
+    <div>
+      <Header/>
+      <div className='main bg-blue-100 w-full h-full pl-[30vh] flex justify-center items-center'>
       <div className="main_box w-[30vw] h-[75vh] bg-gray-50 rounded-lg shadow-lg flex flex-col items-center p-6">
 
 
@@ -21,6 +24,7 @@ const About = () => {
         </div>
 
       </div>
+    </div>
     </div>
   );
 }

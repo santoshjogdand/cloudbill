@@ -1,5 +1,6 @@
 import React, { useState,useEffect } from 'react';
 import axios from 'axios';
+import Header from '../Header/Header';
 
 const Customers = () => {
   const [customers, setCustomers] = useState([]);
@@ -18,7 +19,7 @@ const Customers = () => {
   // Fetch Customers from API
   useEffect(() => {
     axios.get(`${API_URL}/getCustomers`)
-      .then(response => {
+      .then(response => {   
         setCustomers(response.data);
       })
       .catch(error => console.error("Error fetching customers:", error));
@@ -81,7 +82,9 @@ const Customers = () => {
   
 
   return (
-    <div className='Main bg-blue-100 w-full h-full pl-[30vh]'>
+    <div>
+      <Header/>
+      <div className='Main bg-blue-100 w-full h-full pl-[30vh]'>
       <div className='inventory_page p-2'>
         <div className='title flex justify-center text-[1.5vw] font-bold'>
           Customers
@@ -208,6 +211,7 @@ const Customers = () => {
           )}
         </div>
       </div>
+    </div>
     </div>
   );
 };

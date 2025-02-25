@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import Header from '../Header/Header'
 
 const Invoice = () => {
 
@@ -61,7 +62,9 @@ const Invoice = () => {
   const dueAmount = total - receivedAmount;
 
   return (
-    <div className='main w-full h-fit pb-[50vh] bg-blue-100 flex pl-[30vh]'>
+    <div>
+      <Header/>
+      <div className='main w-full h-fit pb-[50vh] bg-blue-100 flex pl-[30vh]'>
       <div className='left w-[55vw] h-full'>
         <div className='customer'>
           <div className='title flex justify-between mt-5 px-10'>
@@ -300,6 +303,7 @@ const Invoice = () => {
           </div>
         </div>
       </div>
+    </div>
     </div>
   );
 };

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import Header from "../Header/Header";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -21,7 +22,8 @@ const Login = () => {
   };
 
   return (
-    <div className="flex justify-center items-center h-screen bg-blue-100">
+    <div>
+      <div className="flex justify-center items-center h-screen bg-blue-100">
       <form onSubmit={handleLogin} className="bg-gray-50 p-6 shadow-md rounded-md">
         <h2 className="text-2xl font-bold mb-4">Login</h2>
         <input
@@ -47,6 +49,7 @@ const Login = () => {
           Don't have an account? <a href="/signup" className="text-blue-600">Sign up</a>
         </p>
       </form>
+    </div>
     </div>
   );
 };

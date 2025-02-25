@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Header from "../Header/Header";
 
 const Inventory = () => {
   const [products, setProducts] = useState([]);
@@ -86,7 +87,9 @@ const Inventory = () => {
 
 
   return (
-    <div className='Main bg-blue-100 w-full h-full pl-[30vh]'>
+    <div>
+      <Header/>
+      <div className='Main bg-blue-100 w-full h-full pl-[30vh]'>
       <div className='inventory_page p-2'>
         <div className='title flex justify-center text-[1.5vw] font-bold'>
           Inventory
@@ -277,6 +280,7 @@ const Inventory = () => {
           )}
         </div>
       </div>
+    </div>
     </div>
   );
 };
