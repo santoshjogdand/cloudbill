@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import Header from "../Header/Header";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -9,21 +8,19 @@ const Login = () => {
 
   const handleLogin = (e) => {
     e.preventDefault();
-    // Hardcoded credentials (later, replace with API request)
     const validEmail = "admin@example.com";
     const validPassword = "password123";
 
     if (email === validEmail && password === validPassword) {
       localStorage.setItem("authenticated", "true"); // Store authentication
-      navigate("/"); // Redirect to Home Page
+      navigate("/home"); // Redirect to Home Page
     } else {
       alert("Invalid Email or Password");
     }
   };
 
   return (
-    <div>
-      <div className="flex justify-center items-center h-screen bg-blue-100">
+    <div className="flex justify-center items-center h-screen bg-blue-100">
       <form onSubmit={handleLogin} className="bg-gray-50 p-6 shadow-md rounded-md">
         <h2 className="text-2xl font-bold mb-4">Login</h2>
         <input
@@ -49,7 +46,6 @@ const Login = () => {
           Don't have an account? <a href="/signup" className="text-blue-600">Sign up</a>
         </p>
       </form>
-    </div>
     </div>
   );
 };
