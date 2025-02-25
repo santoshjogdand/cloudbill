@@ -37,8 +37,8 @@ const Header = () => {
                 <Link to="/About" className='text-white text-[3vh]'>Account</Link>
               </li>
               <li className='flex items-center space-x-3 m-3'>
-                <img src="../src/assets/about.svg" alt="" className='w-[1.5vw]' />
-                <Link to="/login" className='text-white text-[3vh]'>Login</Link>
+              <img src="../src/assets/about.svg" alt="" className='w-[1.5vw]' />
+              <Link to="/login" className='text-white text-[3vh]'>Login</Link>
               </li>
             </ul>
           </div>
