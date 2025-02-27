@@ -12,7 +12,9 @@ const Inventory = () => {
     name: "",
     category: "",
     quantity: "",
-    nos: "",
+    unitOfMeasure: "",
+    conversionRate: "",
+    alternativeUnit: "",
     taxRate: "",
     taxType: "",
     supplier: "",
@@ -21,6 +23,8 @@ const Inventory = () => {
     description: "",
     costPrice: "",
     sellingPrice: "",
+    discount: "",
+    recordQuantity: "",
   });
 
   const handleInputChange = (e) => {
@@ -37,17 +41,21 @@ const Inventory = () => {
   const handleEditProduct = (product, index) => {
     setNewProduct({
       name: product.name,
-      nos: product.nos,
+      unitOfMeasure: product.unitOfMeasure,
       quantity: product.quantity, // Keep correct mapping
       costPrice: product.costPrice,
       sellingPrice: product.sellingPrice,
       category: "",
+      conversionRate: "",
+      alternativeUnit: "",
       taxRate: "",
       taxType: "",
       supplier: "",
       batchNumber: "",
       manufacturer: "",
       description: "",
+      discount: "",
+      recordQuantity: "",
     });
     setEditingIndex(index);  // Store the index of the edited product
     setShowAddProductForm(true);
@@ -69,17 +77,21 @@ const Inventory = () => {
 
     setNewProduct({
       name: "",
-      quantity: "",
-      nos: "",
-      costPrice: "",
-      sellingPrice: "",
       category: "",
+      quantity: "",
+      unitOfMeasure: "",
+      conversionRate: "",
+      alternativeUnit: "",
       taxRate: "",
       taxType: "",
       supplier: "",
       batchNumber: "",
       manufacturer: "",
       description: "",
+      costPrice: "",
+      sellingPrice: "",
+      discount: "",
+      recordQuantity: "",
     });
 
     setShowAddProductForm(false); // Hide the form after submission
@@ -182,7 +194,7 @@ const Inventory = () => {
                       className="p-2 border border-gray-300 outline-none text-sm text-gray-700 focus:ring-1 focus:ring-gray-400"
                     />
                     <input
-                      type="text"
+                      type="number"
                       name="quantity"
                       placeholder="Quantity*"
                       value={newProduct.quantity}
@@ -191,9 +203,25 @@ const Inventory = () => {
                     />
                     <input
                       type="text"
-                      name="nos"
-                      placeholder="NOS*"
-                      value={newProduct.nos}
+                      name="unitOfMeasure"
+                      placeholder="Unit of Measure*"
+                      value={newProduct.unitOfMeasure}
+                      onChange={handleInputChange}
+                      className="p-2 border border-gray-300 outline-none text-sm text-gray-700 focus:ring-1 focus:ring-gray-400"
+                    />
+                    <input
+                      type="text"
+                      name="conversionRate"
+                      placeholder="Conversion Rate"
+                      value={newProduct.conversionRate}
+                      onChange={handleInputChange}
+                      className="p-2 border border-gray-300 outline-none text-sm text-gray-700 focus:ring-1 focus:ring-gray-400"
+                    />
+                    <input
+                      type="text"
+                      name="alternativeUnit"
+                      placeholder="Alternative Unit"
+                      value={newProduct.alternativeUnit}
                       onChange={handleInputChange}
                       className="p-2 border border-gray-300 outline-none text-sm text-gray-700 focus:ring-1 focus:ring-gray-400"
                     />
@@ -257,6 +285,22 @@ const Inventory = () => {
                       name="sellingPrice"
                       placeholder="Selling Price*"
                       value={newProduct.sellingPrice}
+                      onChange={handleInputChange}
+                      className="p-2 border border-gray-300 outline-none text-sm text-gray-700 focus:ring-1 focus:ring-gray-400"
+                    />
+                    <input
+                      type="number"
+                      name="discount"
+                      placeholder="Discount"
+                      value={newProduct.discount}
+                      onChange={handleInputChange}
+                      className="p-2 border border-gray-300 outline-none text-sm text-gray-700 focus:ring-1 focus:ring-gray-400"
+                    />
+                    <input
+                      type="number"
+                      name="record_quantity"
+                      placeholder="Record Quantity"
+                      value={newProduct.recordQuantity}
                       onChange={handleInputChange}
                       className="p-2 border border-gray-300 outline-none text-sm text-gray-700 focus:ring-1 focus:ring-gray-400"
                     />
